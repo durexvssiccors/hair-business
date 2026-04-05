@@ -1,0 +1,6 @@
+sku_id,product_title,cost_basis,target_price,sale_price,floor_price,margin_estimate,pricing_notes
+SKU-BS-24-3B,Raw Bone Straight 24 Inch - 3 Bundle Set,110.0,185.0,170.0,150.0,60.0,Estimated based on 20in $128 and 24in ombre $75/pc
+SKU-BW-20-22-24-3B,Raw Body Wave Bundle Set 20 22 24,100.0,165.0,155.0,140.0,55.0,Estimated based on 18in $102 set
+SKU-DW-WIG-26,Raw Deep Wave Wig 26 Inch,250.0,395.0,372.0,350.0,122.0,Price from priceList.jpeg for Raw 26in 13x4
+SKU-CLS-BS-18,Straight Closure 18 Inch,15.0,35.0,30.0,25.0,15.0,Price from raw-bone-straight-18in-closure-30usd.jpg
+SKU-CUSTOM-001,Build Your Own Package,0.0,0.0,0.0,0.0,0.0,Quote-based

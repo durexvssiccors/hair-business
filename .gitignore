@@ -1,0 +1,16 @@
+node_modules/
+.vercel/
+.DS_Store
+dist/
+.env
+.astro/
+.codex
+temp_*.jpg
+temp_*.jpeg
+rclone
+.tools/
+public/assets/processed/
+assets/
+public/assets/
+dist/
+node_modules/

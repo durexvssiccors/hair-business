@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const homepage = import.meta.glob('../../content/homepage.md', { eager: true });
+const path = '../../content/homepage.md';
+const entry = homepage[path];
+const { Content, frontmatter } = entry;
+---
+
+<BaseLayout title={frontmatter?.title || "Home"}>
+    <Content />
+</BaseLayout>

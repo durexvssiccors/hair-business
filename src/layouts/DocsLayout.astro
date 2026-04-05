@@ -1,0 +1,194 @@
+---
+const { title } = Astro.props;
+const docsGlob = import.meta.glob('../../**/*.md', { eager: true });
+const publicPrefixes = [
+  'products/',
+  'content/guides/',
+  'content/faq/',
+  'policies/',
+];
+const publicExactPaths = new Set([
+  'content/about',
+]);
+
+function isPublicDoc(path) {
+  const slug = path.replace('../../', '').replace('.md', '');
+  return publicPrefixes.some(prefix => slug.startsWith(prefix)) || publicExactPaths.has(slug);
+}
+
+const navItems = Object.keys(docsGlob)
+  .filter(isPublicDoc)
+  .map(path => {
+    const slug = path.replace('../../', '').replace('.md', '');
+    const data = docsGlob[path];
+    let section = 'General';
+    if (slug.startsWith('products/')) section = 'Products';
+    else if (slug.startsWith('content/guides/')) section = 'Guides';
+    else if (slug.startsWith('content/faq/')) section = 'Help';
+    else if (slug === 'content/about') section = 'About';
+    else if (slug.startsWith('policies/')) section = 'Policies';
+    return {
+      slug,
+      title: data.frontmatter?.title || slug.split('/').pop().replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+      section
+    };
+  })
+  .sort((a, b) => a.slug.localeCompare(b.slug));
+
+const sections = [...new Set(navItems.map(item => item.section))].sort((a, b) => {
+  const order = ['Products', 'Guides', 'Help', 'About', 'Policies'];
+  const indexA = order.indexOf(a);
+  const indexB = order.indexOf(b);
+  if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+  if (indexA !== -1) return -1;
+  if (indexB !== -1) return 1;
+  return a.localeCompare(b);
+});
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title || "Raw Hair Direct — Docs"}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --color-primary: #1C1917;
+        --color-gold: #CA8A04;
+        --color-gold-light: #D97706;
+        --color-bg: #FAFAF9;
+        --color-text: #0C0A09;
+        --color-muted: #78716C;
+        --color-border: #E7E5E4;
+        --color-sidebar: #F5F4F2;
+        --font-heading: 'Playfair Display', Georgia, serif;
+        --font-body: 'Inter', system-ui, sans-serif;
+      }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-body);
+        background: var(--color-bg);
+        color: var(--color-text);
+        display: flex;
+        min-height: 100vh;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      .sidebar {
+        width: 280px;
+        min-height: 100vh;
+        background: var(--color-sidebar);
+        border-right: 1px solid var(--color-border);
+        padding: 2rem 1.5rem;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow-y: auto;
+        flex-shrink: 0;
+      }
+      .sidebar-brand {
+        display: block;
+        font-family: var(--font-heading);
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--color-primary);
+        text-decoration: none;
+        margin-bottom: 0.5rem;
+      }
+      .sidebar-brand span { color: var(--color-gold); }
+      .sidebar-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.8rem;
+        color: var(--color-gold);
+        text-decoration: none;
+        margin-bottom: 2rem;
+        font-weight: 500;
+        transition: opacity 0.2s;
+      }
+      .sidebar-back:hover { opacity: 0.7; }
+      .sidebar-section-title {
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--color-muted);
+        margin-bottom: 0.75rem;
+        margin-top: 1.5rem;
+      }
+      .sidebar-nav { list-style: none; }
+      .sidebar-nav li { margin: 0.25rem 0; }
+      .sidebar-nav a {
+        display: block;
+        font-size: 0.875rem;
+        color: var(--color-primary);
+        text-decoration: none;
+        padding: 0.3rem 0.5rem;
+        border-radius: 4px;
+        transition: all 0.15s;
+      }
+      .sidebar-nav a:hover {
+        background: var(--color-border);
+        color: var(--color-gold);
+      }
+      .sidebar-nav .nested { padding-left: 0.75rem; }
+      .main-content {
+        flex: 1;
+        padding: 3rem 4rem;
+        max-width: 860px;
+        min-width: 0;
+      }
+      .main-content h1 { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--color-primary); border-bottom: 1px solid var(--color-border); padding-bottom: 1rem; }
+      .main-content h2 { font-family: var(--font-heading); font-size: 1.75rem; font-weight: 600; margin-top: 3rem; margin-bottom: 1.25rem; color: var(--color-primary); }
+      .main-content h3 { font-size: 1.1rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; color: var(--color-primary); }
+      .main-content p { margin-bottom: 1.25rem; color: #292524; line-height: 1.8; }
+      .main-content ul, .main-content ol { padding-left: 1.5rem; margin-bottom: 1.25rem; }
+      .main-content li { margin-bottom: 0.5rem; }
+      .main-content hr { border: none; border-top: 1px solid var(--color-border); margin: 3rem 0; }
+      .main-content strong { font-weight: 600; }
+      .main-content code { font-family: 'Courier New', monospace; font-size: 0.875em; background: var(--color-border); padding: 0.1em 0.4em; border-radius: 3px; }
+      .main-content blockquote { border-left: 4px solid var(--color-gold); padding-left: 1rem; margin-left: 0; color: var(--color-muted); font-style: italic; }
+      @media (max-width: 768px) {
+        .sidebar { display: none; }
+        .main-content { padding: 2rem 1.5rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <aside class="sidebar">
+      <a href="/" class="sidebar-brand">Raw Hair <span>Direct</span></a>
+      <a href="/" class="sidebar-back">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+        Back to site
+      </a>
+      
+      {sections.map(section => (
+        <>
+          <p class="sidebar-section-title">{section}</p>
+          <ul class="sidebar-nav">
+            {section === 'Products' && (
+              <li>
+                <a href="/custom-builder">Custom Package Builder</a>
+              </li>
+            )}
+            {navItems.filter(item => item.section === section).map((item) => (
+              <li>
+                <a href={`/${item.slug}`} class={item.slug.includes('/') ? 'nested' : ''}>
+                  {item.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </>
+      ))}
+    </aside>
+    <main class="main-content">
+      <slot />
+    </main>
+  </body>
+</html>

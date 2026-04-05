@@ -1,0 +1,291 @@
+---
+import DocsLayout from '../layouts/DocsLayout.astro';
+---
+
+<DocsLayout title="Custom Package Builder">
+    <div class="builder-container">
+        <header class="builder-header">
+            <h1>Custom Package Builder</h1>
+            <p class="subtitle">Build your own premium raw hair package. Select your items and we'll calculate an estimated total for your WhatsApp order.</p>
+        </header>
+
+        <div class="builder-grid">
+            <div class="selection-area">
+                <section class="builder-section">
+                    <div class="section-header">
+                        <h2>1. Choose Bundles</h2>
+                        <span class="badge">Raw Vietnamese</span>
+                    </div>
+                    <div class="item-selector" data-type="bundle">
+                        <div class="selector-row">
+                            <select class="texture-select">
+                                <option value="Bone Straight">Bone Straight</option>
+                                <option value="Body Wave">Body Wave</option>
+                                <option value="Deep Wave">Deep Wave</option>
+                                <option value="Curly">Curly</option>
+                            </select>
+                            <select class="length-select">
+                                <option value="12">12"</option>
+                                <option value="14">14"</option>
+                                <option value="16">16"</option>
+                                <option value="18">18"</option>
+                                <option value="20">20"</option>
+                                <option value="22">22"</option>
+                                <option value="24">24"</option>
+                                <option value="26">26"</option>
+                                <option value="28">28"</option>
+                                <option value="30">30"</option>
+                            </select>
+                            <input type="number" class="qty-input" value="0" min="0" />
+                            <button class="add-btn">Add to Set</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="builder-section">
+                    <div class="section-header">
+                        <h2>2. Choose Lace (Closure/Frontal)</h2>
+                        <span class="badge">HD / Transparent</span>
+                    </div>
+                    <div class="item-selector" data-type="lace">
+                        <div class="selector-row">
+                            <select class="type-select">
+                                <option value="Closure">Closure (5x5)</option>
+                                <option value="Frontal">Frontal (13x4)</option>
+                            </select>
+                            <select class="texture-select">
+                                <option value="Bone Straight">Bone Straight</option>
+                                <option value="Body Wave">Body Wave</option>
+                                <option value="Deep Wave">Deep Wave</option>
+                                <option value="Curly">Curly</option>
+                            </select>
+                            <select class="length-select">
+                                <option value="12">12"</option>
+                                <option value="14">14"</option>
+                                <option value="16">16"</option>
+                                <option value="18">18"</option>
+                                <option value="20">20"</option>
+                            </select>
+                            <input type="number" class="qty-input" value="0" min="0" />
+                            <button class="add-btn">Add Lace</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="builder-section">
+                    <div class="section-header">
+                        <h2>3. Ready-to-Wear Wigs</h2>
+                        <span class="badge">Full Density</span>
+                    </div>
+                    <div class="item-selector" data-type="wig">
+                        <div class="selector-row">
+                            <select class="lace-type-select">
+                                <option value="5x5">5x5 Closure Wig</option>
+                                <option value="13x4">13x4 Frontal Wig</option>
+                            </select>
+                            <select class="texture-select">
+                                <option value="Bone Straight">Bone Straight</option>
+                                <option value="Body Wave">Body Wave</option>
+                                <option value="Deep Wave">Deep Wave</option>
+                                <option value="Curly">Curly</option>
+                            </select>
+                            <select class="length-select">
+                                <option value="12">12"</option>
+                                <option value="14">14"</option>
+                                <option value="16">16"</option>
+                                <option value="18">18"</option>
+                                <option value="20">20"</option>
+                                <option value="22">22"</option>
+                                <option value="24">24"</option>
+                                <option value="26">26"</option>
+                            </select>
+                            <input type="number" class="qty-input" value="0" min="0" />
+                            <button class="add-btn">Add Wig</button>
+                        </div>
+                    </div>
+                </section>
+                
+                <p class="policy-note">By ordering, you agree to our <a href="/policies/shipping">Shipping</a> and <a href="/policies/returns">Returns</a> policies.</p>
+            </div>
+
+            <div class="summary-area">
+                <div class="summary-card">
+                    <h3>Order Summary</h3>
+                    <ul id="selection-list">
+                        <li class="empty-msg">Select items to begin</li>
+                    </ul>
+                    <div class="pricing-details">
+                        <div class="price-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotal-price">$0.00</span>
+                        </div>
+                        <div class="price-row total">
+                            <span>Estimated Total:</span>
+                            <span id="total-price">$0.00</span>
+                        </div>
+                    </div>
+                    <button id="whatsapp-btn" class="primary-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793 0-.852.449-1.271.61-1.445.161-.173.346-.217.461-.217h.335c.108 0 .255-.04.4.311.144.352.493 1.201.536 1.287.043.087.07.188.013.299-.058.112-.087.181-.173.282-.087.101-.183.226-.263.303-.089.088-.183.183-.079.359.103.176.459.758.984 1.226.676.602 1.243.788 1.416.874.173.086.274.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.144.39-.087.158.058 1.002.472 1.175.558.173.087.289.129.331.202.044.073.044.419-.1.824zM12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z"/></svg>
+                        Get Quote on WhatsApp
+                    </button>
+                    <p class="disclaimer">* Prices are estimates and subject to change based on specific requirements.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .builder-container { max-width: 1000px; margin: 0 auto; padding-top: 2rem; }
+        .builder-header { margin-bottom: 3rem; text-align: center; }
+        .builder-header h1 { font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .subtitle { color: var(--color-muted); max-width: 600px; margin: 0 auto; }
+        
+        .builder-grid { display: grid; grid-template-columns: 1fr 340px; gap: 3rem; }
+        
+        .builder-section { background: #fff; border: 1px solid var(--color-border); padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+        .builder-section h2 { font-size: 1rem; font-weight: 600; color: var(--color-primary); margin: 0; text-transform: uppercase; letter-spacing: 0.05em; border: none; padding: 0; }
+        .badge { font-size: 0.7rem; background: var(--color-sidebar); color: var(--color-gold); padding: 0.25rem 0.6rem; border-radius: 20px; font-weight: 600; }
+        
+        .selector-row { display: flex; gap: 0.75rem; align-items: center; }
+        select, input { padding: 0.6rem; border: 1px solid var(--color-border); border-radius: 8px; font-size: 0.9rem; background: #fff; color: var(--color-primary); }
+        select:focus, input:focus { outline: none; border-color: var(--color-gold); }
+        .qty-input { width: 70px; }
+        
+        .add-btn { background: var(--color-primary); color: #fff; border: none; padding: 0.6rem 1.25rem; border-radius: 8px; cursor: pointer; font-weight: 500; transition: all 0.2s; white-space: nowrap; }
+        .add-btn:hover { background: var(--color-gold); transform: translateY(-1px); }
+        
+        .summary-card { background: #fff; border: 1px solid var(--color-gold); padding: 2rem; border-radius: 16px; position: sticky; top: 2rem; box-shadow: 0 10px 25px -5px rgba(202, 138, 4, 0.1); }
+        .summary-card h3 { margin-top: 0; font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--color-primary); }
+        
+        #selection-list { list-style: none; padding: 0; margin-bottom: 2rem; }
+        #selection-list li { padding: 0.75rem 0; border-bottom: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+        .item-info { display: flex; flex-direction: column; }
+        .item-label { font-weight: 500; font-size: 0.9rem; }
+        .item-price { font-size: 0.85rem; color: var(--color-muted); }
+        .remove-btn { background: none; border: none; color: #ef4444; cursor: pointer; font-size: 0.75rem; padding: 0.25rem; opacity: 0.7; }
+        .remove-btn:hover { opacity: 1; }
+        
+        .empty-msg { color: var(--color-muted); font-style: italic; border: none !important; text-align: center; padding: 2rem 0 !important; }
+        
+        .pricing-details { margin-bottom: 1.5rem; }
+        .price-row { display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--color-muted); }
+        .price-row.total { font-weight: 700; font-size: 1.25rem; color: var(--color-primary); margin-top: 1rem; padding-top: 1rem; border-top: 2px solid var(--color-sidebar); }
+        
+        .primary-btn { width: 100%; background: var(--color-gold); color: #fff; border: none; padding: 1.25rem; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 0.75rem; font-size: 1rem; }
+        .primary-btn:hover { background: var(--color-primary); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        
+        .disclaimer { font-size: 0.7rem; color: var(--color-muted); text-align: center; margin-top: 1rem; line-height: 1.4; }
+        .policy-note { font-size: 0.8rem; color: var(--color-muted); margin-top: 2rem; text-align: center; }
+        .policy-note a { color: var(--color-gold); text-decoration: none; font-weight: 500; }
+        
+        @media (max-width: 900px) {
+            .builder-grid { grid-template-columns: 1fr; }
+            .summary-area { order: -1; }
+            .summary-card { position: static; }
+        }
+        @media (max-width: 600px) {
+            .selector-row { flex-direction: column; align-items: stretch; }
+            .qty-input { width: 100%; }
+        }
+    </style>
+
+    <script>
+        const selectionList = document.getElementById('selection-list');
+        const subtotalEl = document.getElementById('subtotal-price');
+        const totalEl = document.getElementById('total-price');
+        const whatsappBtn = document.getElementById('whatsapp-btn');
+        let items = [];
+
+        // Pricing Tables (Derived from priceList.jpeg Raw Hair)
+        const PRICES = {
+            bundle: {
+                "12": 45, "14": 50, "16": 55, "18": 60, "20": 65, "22": 70, "24": 75, "26": 80, "28": 85, "30": 90
+            },
+            lace: {
+                "Closure": { "12": 35, "14": 40, "16": 45, "18": 50, "20": 55 },
+                "Frontal": { "12": 45, "14": 55, "16": 65, "18": 75, "20": 85 }
+            },
+            wig: {
+                "5x5": { "12": 113, "14": 125, "16": 143, "18": 219, "20": 241, "22": 259, "24": 293, "26": 336 },
+                "13x4": { "12": 156, "14": 162, "16": 176, "18": 247, "20": 277, "22": 289, "24": 325, "26": 372 }
+            }
+        };
+
+        document.querySelectorAll('.add-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const row = e.target.closest('.selector-row');
+                const selector = e.target.closest('.item-selector');
+                const type = selector.dataset.type;
+                const qty = parseInt(row.querySelector('.qty-input').value);
+                
+                if (qty <= 0) return;
+
+                const texture = row.querySelector('.texture-select')?.value || '';
+                const length = row.querySelector('.length-select')?.value || '';
+                
+                let price = 0;
+                let label = "";
+
+                if (type === 'bundle') {
+                    price = PRICES.bundle[length] || 0;
+                    label = `${texture} Bundle (${length}")`;
+                } else if (type === 'lace') {
+                    const laceType = row.querySelector('.type-select').value;
+                    price = PRICES.lace[laceType][length] || 0;
+                    label = `${texture} ${laceType} (${length}")`;
+                } else if (type === 'wig') {
+                    const wigLace = row.querySelector('.lace-type-select').value;
+                    price = PRICES.wig[wigLace][length] || 0;
+                    label = `${texture} ${wigLace} Wig (${length}")`;
+                }
+
+                items.push({ label, qty, price: price * qty });
+                updateUI();
+                row.querySelector('.qty-input').value = 0;
+            });
+        });
+
+        function updateUI() {
+            if (items.length === 0) {
+                selectionList.innerHTML = '<li class="empty-msg">Select items to begin</li>';
+                subtotalEl.innerText = '$0.00';
+                totalEl.innerText = '$0.00';
+                return;
+            }
+
+            selectionList.innerHTML = items.map((item, index) => `
+                <li>
+                    <div class="item-info">
+                        <span class="item-label">${item.qty}x ${item.label}</span>
+                        <span class="item-price">$${item.price.toFixed(2)}</span>
+                    </div>
+                    <button onclick="window.removeItem(${index})" class="remove-btn">Remove</button>
+                </li>
+            `).join('');
+
+            const subtotal = items.reduce((sum, item) => sum + item.price, 0);
+            subtotalEl.innerText = `$${subtotal.toFixed(2)}`;
+            totalEl.innerText = `$${subtotal.toFixed(2)}`;
+        }
+
+        window.removeItem = (index) => {
+            items.splice(index, 1);
+            updateUI();
+        };
+
+        whatsappBtn.addEventListener('click', () => {
+            if (items.length === 0) {
+                alert('Please add some items to your package first!');
+                return;
+            }
+
+            const subtotal = items.reduce((sum, item) => sum + item.price, 0);
+            const itemsList = items.map(i => `- ${i.qty}x ${i.label} ($${i.price.toFixed(2)})`).join('\n');
+            const message = `Hi! I've built a custom package on your website:\n\n${itemsList}\n\n*Estimated Total: $${subtotal.toFixed(2)}*\n\nCan you please confirm availability and provide payment details?`;
+            
+            const encoded = encodeURIComponent(message);
+            window.open(`https://wa.me/233500601915?text=${encoded}`, '_blank');
+        });
+    </script>
+</DocsLayout>

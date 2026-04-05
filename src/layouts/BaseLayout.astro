@@ -1,0 +1,173 @@
+---
+const { title } = Astro.props;
+const docsGlob = import.meta.glob('../../**/*.md', { eager: true });
+const publicPrefixes = [
+  'products/',
+  'content/guides/',
+  'content/faq/',
+  'policies/',
+];
+const publicExactPaths = new Set([
+  'content/about',
+]);
+
+function isPublicDoc(path) {
+  const slug = path.replace('../../', '').replace('.md', '');
+  return publicPrefixes.some(prefix => slug.startsWith(prefix)) || publicExactPaths.has(slug);
+}
+
+const navItems = Object.keys(docsGlob)
+  .filter(isPublicDoc)
+  .map(path => {
+    const slug = path.replace('../../', '').replace('.md', '');
+    const data = docsGlob[path];
+    let section = 'General';
+    if (slug.startsWith('products/')) section = 'Products';
+    else if (slug.startsWith('content/guides/')) section = 'Guides';
+    else if (slug.startsWith('content/faq/')) section = 'Help';
+    else if (slug === 'content/about') section = 'About';
+    else if (slug.startsWith('policies/')) section = 'Policies';
+    return {
+      slug,
+      title: data.frontmatter?.title || slug.split('/').pop().replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+      section
+    };
+  })
+  .sort((a, b) => a.slug.localeCompare(b.slug));
+
+const sections = [...new Set(navItems.map(item => item.section))].sort((a, b) => {
+  const order = ['Products', 'Guides', 'Help', 'About', 'Policies'];
+  const indexA = order.indexOf(a);
+  const indexB = order.indexOf(b);
+  if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+  if (indexA !== -1) return -1;
+  if (indexB !== -1) return 1;
+  return a.localeCompare(b);
+});
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+        <Analytics />
+		<title>{title || "Raw Hair Direct — Luxury Hair Source"}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+		<style>
+			:root {
+                --color-primary: #1C1917;
+                --color-gold: #CA8A04;
+                --color-gold-light: #D97706;
+                --color-bg: #FAFAF9;
+                --color-text: #0C0A09;
+                --color-muted: #78716C;
+                --color-border: #E7E5E4;
+                --color-sidebar: #F5F4F2;
+                --font-heading: 'Playfair Display', Georgia, serif;
+                --font-body: 'Inter', system-ui, sans-serif;
+			}
+			*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+			body {
+				font-family: var(--font-body);
+				margin: 0;
+				display: flex;
+				color: var(--color-text);
+				background: var(--color-bg);
+                min-height: 100vh;
+			}
+			.sidebar {
+				width: 280px;
+				height: 100vh;
+				overflow-y: auto;
+				background: var(--color-sidebar);
+				border-right: 1px solid var(--color-border);
+				padding: 2rem 1.5rem;
+				position: sticky;
+				top: 0;
+                flex-shrink: 0;
+			}
+			.sidebar-brand {
+                display: block;
+                font-family: var(--font-heading);
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: var(--color-primary);
+                text-decoration: none;
+                margin-bottom: 2rem;
+                letter-spacing: -0.02em;
+            }
+            .sidebar-brand span { color: var(--color-gold); }
+            .sidebar-section-title {
+                font-size: 0.7rem;
+                font-weight: 600;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: var(--color-muted);
+                margin-bottom: 0.75rem;
+                margin-top: 1.5rem;
+            }
+            .sidebar-nav { list-style: none; padding: 0; margin: 0; }
+            .sidebar-nav li { margin: 0.25rem 0; }
+            .sidebar-nav a {
+                display: block;
+                font-size: 0.875rem;
+                color: var(--color-primary);
+                text-decoration: none;
+                padding: 0.4rem 0.75rem;
+                border-radius: 6px;
+                transition: all 0.15s;
+            }
+            .sidebar-nav a:hover {
+                background: var(--color-border);
+                color: var(--color-gold);
+            }
+            .sidebar-nav .nested { padding-left: 1.5rem; font-size: 0.8rem; opacity: 0.8; }
+			main {
+				flex: 1;
+				padding: 4rem;
+				max-width: 1000px;
+				margin: 0 auto;
+			}
+            @media (max-width: 768px) {
+                .sidebar { display: none; }
+                main { padding: 2rem 1.5rem; }
+            }
+		</style>
+	</head>
+	<body>
+		<aside class="sidebar">
+			<a href="/" class="sidebar-brand">Raw Hair <span>Direct</span></a>
+			
+            {sections.map(section => (
+                <>
+                    <p class="sidebar-section-title">{section}</p>
+                    <ul class="sidebar-nav">
+                        {section === 'Products' && (
+                            <li>
+                                <a href="/custom-builder">Custom Package Builder</a>
+                            </li>
+                        )}
+                        {navItems.filter(item => item.section === section).map((item) => (
+                            <li>
+                                <a href={`/${item.slug}`} class={item.slug.includes('/') ? 'nested' : ''}>
+                                    {item.title}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </>
+            ))}
+		</aside>
+		<main>
+			<slot />
+		</main>
+	</body>
+</html>
+ot />
+		</main>
+	</body>
+</html>

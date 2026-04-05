@@ -1,0 +1,60 @@
+---
+import DocsLayout from '../layouts/DocsLayout.astro';
+
+const publicPrefixes = [
+    'products/',
+    'content/guides/',
+    'content/faq/',
+    'policies/',
+];
+const publicExactPaths = new Set([
+    'content/about',
+]);
+
+function isPublicSlug(slug) {
+    return publicPrefixes.some(prefix => slug.startsWith(prefix)) || publicExactPaths.has(slug);
+}
+
+export async function getStaticPaths() {
+    const publicPrefixes = [
+        'products/',
+        'content/guides/',
+        'content/faq/',
+        'policies/',
+    ];
+    const publicExactPaths = new Set([
+        'content/about',
+    ]);
+    const isPublicSlug = (slug) =>
+        publicPrefixes.some(prefix => slug.startsWith(prefix)) || publicExactPaths.has(slug);
+
+    const docs = import.meta.glob('../../*.md');
+    const nestedDocs = import.meta.glob('../../**/*.md');
+    const allPaths = { ...docs, ...nestedDocs };
+
+    return Object.keys(allPaths)
+        .map(path => {
+            const slug = path.replace('../../', '').replace('.md', '');
+            return { params: { slug } };
+        })
+        .filter(({ params }) => isPublicSlug(params.slug));
+}
+
+const docs = import.meta.glob('../../**/*.md', { eager: true });
+const { slug } = Astro.params;
+if (!isPublicSlug(slug)) {
+    return Astro.redirect('/');
+}
+const path = `../../${slug}.md`;
+const entry = docs[path];
+
+if (!entry) {
+    return Astro.redirect('/404');
+}
+
+const { Content, frontmatter } = entry;
+---
+
+<DocsLayout title={frontmatter?.title || slug.split('/').pop()}>
+    <Content />
+</DocsLayout>
