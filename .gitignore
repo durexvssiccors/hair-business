@@ -9,8 +9,9 @@ temp_*.jpg
 temp_*.jpeg
 rclone
 .tools/
-public/assets/processed/
 assets/
-public/assets/
 dist/
 node_modules/
+*.mp4
+*.mov
+*.MOV
