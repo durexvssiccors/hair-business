@@ -1,4 +1,5 @@
 ---
+import Analytics from '../components/Analytics.astro';
 const { title } = Astro.props;
 const docsGlob = import.meta.glob('../../**/*.md', { eager: true });
 const publicPrefixes = [
@@ -164,10 +165,6 @@ const sections = [...new Set(navItems.map(item => item.section))].sort((a, b) =>
 		</aside>
 		<main>
 			<slot />
-		</main>
-	</body>
-</html>
-ot />
 		</main>
 	</body>
 </html>
