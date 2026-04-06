@@ -1,0 +1,90 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article' | 'product';
+  slug?: string;
+  frontmatter?: any;
+}
+
+const { 
+  title = "Raw Hair Direct — Luxury Vietnamese Hair Ghana", 
+  description = "Factory-direct premium raw Vietnamese hair for women in Ghana. No middleman markup, just pure quality and soft-life movement.",
+  image = "/assets/processed/raw-bone-straight-20in-bundles-128usd.jpg",
+  type = "website",
+  slug = "",
+  frontmatter = {}
+} = Astro.props;
+
+const siteUrl = "https://raw-hair-ghana.vercel.app"; // Replace with your final domain
+const canonicalURL = new URL(slug, siteUrl).href;
+const socialImageURL = new URL(image, siteUrl).href;
+
+// JSON-LD Generation
+let schema: any = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": title,
+  "description": description,
+  "url": canonicalURL
+};
+
+if (type === 'product' || slug.startsWith('products/')) {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": title,
+    "description": description,
+    "image": socialImageURL,
+    "brand": {
+      "@type": "Brand",
+      "name": "Raw Hair Direct"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": canonicalURL,
+      "priceCurrency": "USD",
+      "price": frontmatter?.price || "0",
+      "availability": "https://schema.org/InStock"
+    }
+  };
+} else if (type === 'article' || slug.startsWith('content/blog/')) {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": title,
+    "image": socialImageURL,
+    "author": {
+      "@type": "Person",
+      "name": "Founder"
+    },
+    "datePublished": frontmatter?.date || new Date().toISOString()
+  };
+}
+---
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={socialImageURL} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={socialImageURL} />
+
+<!-- JSON-LD -->
+<script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />

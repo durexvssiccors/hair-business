@@ -1,11 +1,13 @@
 ---
 import Analytics from '../components/Analytics.astro';
-const { title } = Astro.props;
+import SEO from '../components/SEO.astro';
+const { title, description, image } = Astro.props;
 const docsGlob = import.meta.glob('../../**/*.md', { eager: true });
 const publicPrefixes = [
   'products/',
   'content/guides/',
   'content/faq/',
+  'content/blog/',
   'policies/',
 ];
 const publicExactPaths = new Set([
@@ -26,6 +28,7 @@ const navItems = Object.keys(docsGlob)
     if (slug.startsWith('products/')) section = 'Products';
     else if (slug.startsWith('content/guides/')) section = 'Guides';
     else if (slug.startsWith('content/faq/')) section = 'Help';
+    else if (slug.startsWith('content/blog/')) section = 'Blog';
     else if (slug === 'content/about') section = 'About';
     else if (slug.startsWith('policies/')) section = 'Policies';
     return {
@@ -37,7 +40,7 @@ const navItems = Object.keys(docsGlob)
   .sort((a, b) => a.slug.localeCompare(b.slug));
 
 const sections = [...new Set(navItems.map(item => item.section))].sort((a, b) => {
-  const order = ['Products', 'Guides', 'Help', 'About', 'Policies'];
+  const order = ['Products', 'Blog', 'Guides', 'Help', 'About', 'Policies'];
   const indexA = order.indexOf(a);
   const indexB = order.indexOf(b);
   if (indexA !== -1 && indexB !== -1) return indexA - indexB;
@@ -53,6 +56,7 @@ const sections = [...new Set(navItems.map(item => item.section))].sort((a, b) =>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+        <SEO {title} {description} {image} slug="" />
         <Analytics />
 		<title>{title || "Raw Hair Direct — Luxury Hair Source"}</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -140,9 +144,12 @@ const sections = [...new Set(navItems.map(item => item.section))].sort((a, b) =>
 		</style>
 	</head>
 	<body>
+		<main>
+			<slot />
+		</main>
 		<aside class="sidebar">
 			<a href="/" class="sidebar-brand">Raw Hair <span>Direct</span></a>
-			
+
             {sections.map(section => (
                 <>
                     <p class="sidebar-section-title">{section}</p>
@@ -163,8 +170,5 @@ const sections = [...new Set(navItems.map(item => item.section))].sort((a, b) =>
                 </>
             ))}
 		</aside>
-		<main>
-			<slot />
-		</main>
 	</body>
 </html>

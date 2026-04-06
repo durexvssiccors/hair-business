@@ -106,17 +106,18 @@ hair-company/
 11. **[x] Commerce Stack Decision:** Confirmed Astro custom commerce path.
 12. **[x] Payment & Shipping:** Initial pricing logic and payment options defined.
 13. **[x] Interim Deployment:** Connected GitHub to Vercel and verified stable production build.
+14. **[x] Media Hosting Strategy:** Pushed 200MB+ of product images to GitHub; identified external hosting (Cloudinary/S3) for 2GB+ of video assets.
 
 ### Phase 4: Sales & Content Launch - **[IN PROGRESS]**
-14. **[x] Sales Matrix:** WhatsApp scripts completed.
-15. **[ ] Content Blitz:** Generate the 30 individual posts from the calendar.
-16. **[x] Analytics Setup:** Connected GA4, Meta, TikTok, Hotjar, and Microsoft Clarity placeholders.
-17. **[ ] WhatsApp Operations:** Configure Business automation, templates, and response workflow.
+15. **[x] Sales Matrix:** WhatsApp scripts completed.
+16. **[ ] Content Blitz:** Generate the 30 individual posts from the calendar.
+17. **[x] Analytics Setup:** Connected GA4, Meta, TikTok, Hotjar, and Microsoft Clarity placeholders.
+18. **[ ] WhatsApp Operations:** Configure Business automation, templates, and response workflow.
 
 ### Phase 5: QA & Go-Live - **[PENDING]**
-18. **[ ] End-to-End Test:** Full order simulation across product page, custom builder, inquiry flow, and checkout.
-19. **[ ] Final Deployment:** Move to production domain.
-20. **[ ] Launch:** Execution of the 30-day content plan.
+19. **[ ] End-to-End Test:** Full order simulation across product page, custom builder, inquiry flow, and checkout.
+20. **[ ] Final Deployment:** Move to production domain.
+21. **[ ] Launch:** Execution of the 30-day content plan.
 
 ---
 
