@@ -41,6 +41,18 @@ Be careful: many shops selling "Virgin" or "Grade 10A" hair have very thin ends.
 
 Because our Vietnamese hair is **Raw**, it maintains its density from top to bottom. Our 3-bundle set often looks fuller than a 4-bundle set from a lesser supplier.
 
+## 📽️ Storyboard: The Fullness Standard
+### 🎞️ Intent & Vibe
+Visually demonstrate the "Elite Fullness" of raw hair. The goal is to move the customer away from "thin" processed bundles and toward the investment of high-density raw hair.
+
+### 📸 Visual Production Prompt (Hero Image)
+**Subject:** A sophisticated West African woman with glowing skin, sitting in a sun-drenched, high-end minimalist living room. 
+**Product:** She is running her fingers through 24-inch Raw Vietnamese Body Wave hair that looks incredibly thick, lustrous, and full from root to tip.
+**Environment:** Luxury penthouse setting with floor-to-ceiling windows.
+**Lighting:** Warm golden hour sunlight catching the natural highlights and "bounce" of the hair.
+**Camera:** 8k, Macro lens, shallow depth of field focusing on the hair's density and texture.
+**Aesthetic:** "Old Money" luxury, effortless elegance.
+
 ---
 
 **Build your perfect set.**  

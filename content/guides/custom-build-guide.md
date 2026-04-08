@@ -164,6 +164,18 @@ It can begin as:
 
 The goal is clarity, flexibility, and conversion — not technical complexity on day one.
 
+## 📽️ Storyboard: The Custom Experience
+### 🎞️ Intent & Vibe
+Showcase the freedom and personalization of building your own hair package. Position the brand as a partner in creating a unique, tailored look for each customer.
+
+### 📸 Visual Production Prompt (Hero Image)
+**Subject:** An overhead shot of several raw Vietnamese hair bundles in different textures—Bone Straight, Body Wave, and Deep Wave—arranged elegantly on a high-end designer desk. 
+**Product:** A gold-trimmed notebook, a sleek black pen, and a high-end laptop are in the frame, suggesting a customized, curated shopping experience. 
+**Environment:** Luxury home office with high-end decor.
+**Lighting:** Soft, focused lighting from a designer desk lamp.
+**Camera:** 8k, Macro, shallow depth of field.
+**Aesthetic:** "Rich Polished Buyer," highly customized, professional, and elegant.
+
 ---
 
 ## Closing Section

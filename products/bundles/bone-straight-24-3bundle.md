@@ -6,7 +6,7 @@ collection: "bone_straight"
 texture: "bone_straight"
 length: "24"
 price: "0"
-hero_asset: "AST-0001"
+hero_asset: "AST-0056"
 hero_asset_path: "/assets/processed/raw-bone-straight-20in-bundles-128usd.jpg"
 hero_asset_type: "image"
 ---

@@ -37,6 +37,18 @@ Our goal isn't to be the "cheapest" in the market. Cheap hair usually means low 
 
 It means you can finally get the hair you've seen on celebrities and influencers without the celebrity price tag. It means when you pay for 24 inches of Raw Bone Straight, you are paying for the hair itself, not someone else's office rent and marketing budget.
 
+## 📽️ Storyboard: The Direct Plug
+### 🎞️ Intent & Vibe
+Showcase the brand's transparency and factory-direct origins. The goal is to build trust by showing that luxury can be affordable when the middleman is removed.
+
+### 📸 Visual Production Prompt (Hero Image)
+**Subject:** A high-end editorial shot of a beautiful black model with dark mahogany skin and elegant West African features. 
+**Product:** She is draped in 26-inch Raw Vietnamese Bone Straight bundles that have a mirror-like shine. 
+**Environment:** A high-end factory-style setting with industrial luxury elements like brass, dark wood, and warm lighting.
+**Lighting:** Cinematic high-contrast lighting to emphasize the "factory-direct" theme.
+**Camera:** 8k resolution, shot on Arri Alexa, 85mm lens.
+**Aesthetic:** Luxury industrial, polished, transparent business vibe.
+
 ---
 
 **Get the Direct Plug price.**  

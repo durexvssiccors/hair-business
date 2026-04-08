@@ -95,7 +95,7 @@ This document provides a crawlable record of the Instagram marketing campaign fo
 - **Caption:** "Why stick to fixed packages? Build your dream set with our Custom Builder today. Your hair, your rules. #CustomHairPackage #BuildYourOwn #HairFreedom"
 
 ### Day 21: FAQ (Shipping & Ghana)
-- **Asset ID:** AST-0001
+- **Asset ID:** AST-0056
 - **Caption:** "Based in Ghana? We’ve got you. Fast delivery and local support for every order. Because luxury should be easy. #GhanaDelivery #LocalSupport #EasyShopping"
 
 ### Day 22: Product (Highlight Mix)

@@ -36,6 +36,18 @@ Yes, Raw Vietnamese hair costs more upfront than the "Grade 10A" bundles you fin
 
 You aren't just buying hair; you're investing in your look for the next few years.
 
+## 📽️ Storyboard: The Investment Choice
+### 🎞️ Intent & Vibe
+Highlight the long-term value and natural quality of raw Vietnamese hair. Contrast the synthetic shine of processed hair with the deep, natural luster and movement of raw hair.
+
+### 📸 Visual Production Prompt (Hero Image)
+**Subject:** A stunning West African model with radiant, dewy skin.
+**Product:** She is wearing 24-inch Raw Vietnamese Deep Wave hair that is incredibly soft, with natural wave patterns and zero frizz.
+**Environment:** A high-end, modern bathroom or spa setting with marble and gold fixtures.
+**Lighting:** Soft, diffused natural light from a large window.
+**Camera:** 8k resolution, macro shot focusing on the hair's natural texture and movement.
+**Aesthetic:** "Soft Life" luxury, self-care, and quality investment.
+
 ---
 
 **Ready to see the difference?**  

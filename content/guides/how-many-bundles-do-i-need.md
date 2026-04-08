@@ -108,6 +108,18 @@ We can help you figure out:
 - whether a wig is a better fit
 - whether a custom package makes more sense
 
+## 📽️ Storyboard: The Bundle Guide
+### 🎞️ Intent & Vibe
+Clarify the relationship between bundle count and the final look. Position 3 bundles as the high-end luxury standard while acknowledging the need for more in certain styles.
+
+### 📸 Visual Production Prompt (Hero Image)
+**Subject:** A high-end lifestyle shot of a beautiful West African model with glowing skin, showing different bundle counts side-by-side. 
+**Product:** She wears 2 bundles of 24-inch Bone Straight on one side, and 4 bundles on the other side, demonstrating the increase in density and fullness. 
+**Environment:** Luxury dressing room with high-end lighting and high-end fixtures.
+**Lighting:** Soft, even lighting to showcase the hair's movement and sheen.
+**Camera:** 8k resolution, portrait lens with shallow depth of field.
+**Aesthetic:** Informative, high-end editorial, and practical.
+
 [Chat on WhatsApp]  
 [Build Your Package]  
 [Shop Bundles]

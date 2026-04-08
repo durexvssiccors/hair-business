@@ -92,6 +92,18 @@ If you are not sure which one fits you best, message us and we will guide you ba
 - how much maintenance you want
 - whether you are going for everyday polish or a stronger statement look
 
+## 📽️ Storyboard: The Choice
+### 🎞️ Intent & Vibe
+Clarify the differences between a closure and a frontal through clear, high-end visuals. The goal is to help customers make the right choice based on their lifestyle and desired maintenance level.
+
+### 📸 Visual Production Prompt (Hero Image)
+**Subject:** A split-screen composition of a beautiful black model. On one side, she wears a clean, polished 5x5 closure unit in Bone Straight. On the other side, she wears a high-drama 13x4 frontal unit in Body Wave. 
+**Product:** Both pieces use raw Vietnamese hair with exceptional quality and sheen. 
+**Environment:** Minimalist editorial studio with a neutral grey background.
+**Lighting:** Soft, even lighting to showcase the lace "melt" and hairline details on both sides.
+**Camera:** 8k, portrait lens with shallow depth of field.
+**Aesthetic:** Clean, informative, and high-end editorial.
+
 [Ask on WhatsApp]  
 [Shop Closures]  
 [Shop Frontals]

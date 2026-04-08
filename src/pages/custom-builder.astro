@@ -311,6 +311,18 @@ import pricingData from '../data/pricing.json';
       .summary-card { position: static; }
       .footer-inner { flex-direction: column; gap: 1.5rem; }
     }
+    /* MOBILE MENU */
+    .mobile-menu {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 190;
+      background: var(--ink);
+      flex-direction: column; align-items: center; justify-content: center;
+      gap: 2.5rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: 1.4rem; font-family: var(--fh); font-weight: 700; color: var(--cream); }
+    .mobile-menu-close { position: absolute; top: 1.5rem; right: 1.75rem; cursor: pointer; font-size: 1.5rem; background: none; border: none; color: rgba(245,240,232,0.4); }
+
     @media (max-width: 600px) {
       .nav { padding: 1.25rem 1.5rem; }
       .nav-links { display: none; }
@@ -344,6 +356,14 @@ import pricingData from '../data/pricing.json';
       <span></span><span></span><span></span>
     </div>
   </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-menu-close" id="mobile-close" aria-label="Close">✕</button>
+    <a href="/products">Collection</a>
+    <a href="/content/about">Our Story</a>
+    <a href="/content/guides/how-many-bundles-do-i-need">Guides</a>
+    <a href="/" style="color: var(--gold);">Back to Home</a>
+  </div>
 
   <!-- HERO BAND -->
   <div class="page-hero">
@@ -613,6 +633,14 @@ import pricingData from '../data/pricing.json';
     }
 
     window.removeItem = index => { items.splice(index, 1); updateUI(); };
+
+    // Mobile menu
+    const ham = document.getElementById('ham');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileClose = document.getElementById('mobile-close');
+    ham?.addEventListener('click', () => mobileMenu?.classList.add('open'));
+    mobileClose?.addEventListener('click', () => mobileMenu?.classList.remove('open'));
+    mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
 
     waBtn.addEventListener('click', () => {
       if (!items.length) return;

@@ -1,0 +1,323 @@
+---
+import SEO from '../components/SEO.astro';
+import Analytics from '../components/Analytics.astro';
+
+const products = [
+  {
+    slug: '/products/bundles/bone-straight-24-3bundle',
+    label: 'Bone Straight',
+    sub: 'Raw Vietnamese · Bundles',
+    img: '/assets/processed/raw-bone-straight-20in-bundles-128usd.jpg',
+    alt: 'Raw bone straight hair bundles',
+    from: 45,
+  },
+  {
+    slug: '/products/bundles/body-wave-20-22-24',
+    label: 'Body Wave',
+    sub: 'Raw Vietnamese · Bundles',
+    img: '/assets/processed/raw-body-wave-18in-bundles-102usd.jpg',
+    alt: 'Raw body wave hair bundles',
+    from: 45,
+  },
+  {
+    slug: '/products/wigs/deep-wave-wig-26',
+    label: 'Deep Wave Wig',
+    sub: 'Ready-to-Wear · 5×5 & 13×4',
+    img: '/assets/processed/raw-body-wave-20in-5x5-wig-205usd.jpg',
+    alt: 'Deep wave lace wig',
+    from: 205,
+  },
+  {
+    slug: '/products/closures/straight-closure-18',
+    label: 'Closures & Frontals',
+    sub: 'HD Transparent · 5×5 & 13×4',
+    img: '/assets/processed/raw-bone-straight-18in-closure-30usd.jpg',
+    alt: 'Bone straight lace closure',
+    from: 35,
+  },
+  {
+    slug: '/products/bone-straight',
+    label: 'Bone Straight Wigs',
+    sub: 'Raw Vietnamese · Frontal Wigs',
+    img: '/assets/processed/raw-bone-straight-28in-13x4-wig-405usd.jpg',
+    alt: 'Bone straight frontal wig 28 inch',
+    from: 259,
+  },
+  {
+    slug: '/custom-builder',
+    label: 'Custom Package',
+    sub: 'Build Your Set · Any Length',
+    img: '/assets/processed/raw-body-wave-24in-13x4-highlight-wig-289usd.jpg',
+    alt: 'Custom hair package builder',
+    from: null,
+  },
+];
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <SEO
+    title="Collection — Raw Hair Direct"
+    description="Browse raw Vietnamese hair bundles, wigs, closures, and frontals. Factory-direct to Ghana."
+  />
+  <Analytics />
+  <title>Collection — Raw Hair Direct</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink:   #080604;
+      --cream: #F5F0E8;
+      --gold:  #C49A3C;
+      --muted: rgba(245,240,232,0.42);
+      --fh:    'Playfair Display', Georgia, serif;
+      --fb:    'Inter', system-ui, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--fb); background: var(--ink); color: var(--cream); overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; cursor: pointer; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+    /* NAV */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.75rem 2.5rem;
+      background: rgba(8,6,4,0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(245,240,232,0.06);
+    }
+    .nav-logo { font-family: var(--fh); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-size: 0.6rem; font-weight: 400; letter-spacing: 0.28em; text-transform: uppercase; color: var(--muted); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--cream); }
+    .nav-build {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold); border: 1px solid rgba(196,154,60,0.5); padding: 0.55rem 1.25rem;
+      transition: all 0.25s;
+    }
+    .nav-build:hover { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+    .nav-ham { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .nav-ham span { display: block; width: 22px; height: 1px; background: var(--cream); }
+
+    /* MOBILE MENU */
+    .mobile-menu {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 190;
+      background: var(--ink);
+      flex-direction: column; align-items: center; justify-content: center;
+      gap: 2.5rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: 1.5rem; font-family: var(--fh); font-weight: 700; letter-spacing: 0.05em; }
+    .mobile-menu-close { position: absolute; top: 1.5rem; right: 1.75rem; cursor: pointer; font-size: 1.5rem; color: var(--muted); }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding: 9rem 4rem 5rem;
+      border-bottom: 1px solid rgba(245,240,232,0.07);
+    }
+    .page-label {
+      font-size: 0.55rem; font-weight: 600; letter-spacing: 0.35em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.5rem;
+    }
+    .page-h1 {
+      font-family: var(--fh);
+      font-size: clamp(3rem, 7vw, 9rem);
+      font-weight: 700; line-height: 0.9;
+      letter-spacing: -0.02em;
+    }
+    .page-h1 em { font-style: italic; font-weight: 400; }
+
+    /* GRID */
+    .collection {
+      padding: 4rem;
+    }
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+    }
+    .product-card {
+      position: relative; overflow: hidden;
+      background: #13100c;
+      aspect-ratio: 3/4;
+    }
+    .product-card img {
+      position: absolute; inset: 0;
+      transition: transform 0.9s cubic-bezier(0.16,1,0.3,1);
+    }
+    .product-card:hover img { transform: scale(1.05); }
+    .product-card::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(8,6,4,0.75) 0%, rgba(8,6,4,0.1) 50%, transparent 100%);
+      z-index: 1;
+    }
+    .card-info {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 2rem 1.75rem;
+      z-index: 2;
+    }
+    .card-label {
+      font-family: var(--fh);
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-weight: 700; letter-spacing: -0.01em;
+      margin-bottom: 0.2rem;
+    }
+    .card-sub {
+      font-size: 0.55rem; font-weight: 400;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 1rem;
+    }
+    .card-from {
+      font-size: 0.6rem; font-weight: 600;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--gold);
+    }
+    .card-cta {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.58rem; font-weight: 600;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--cream);
+      opacity: 0; transform: translateY(6px);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .product-card:hover .card-cta { opacity: 1; transform: none; }
+
+    /* BOTTOM CTA */
+    .cta-strip {
+      text-align: center;
+      padding: 8rem 4rem;
+      border-top: 1px solid rgba(245,240,232,0.07);
+    }
+    .cta-strip h2 {
+      font-family: var(--fh);
+      font-size: clamp(2rem, 5vw, 6rem);
+      font-weight: 700; line-height: 0.95;
+      letter-spacing: -0.02em;
+      margin-bottom: 2.5rem;
+    }
+    .cta-strip h2 em { font-style: italic; font-weight: 400; }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 1.25rem;
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--cream);
+      border: 1px solid rgba(245,240,232,0.25);
+      padding: 1.1rem 2.5rem;
+      transition: all 0.25s;
+    }
+    .cta-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); gap: 1.75rem; }
+
+    /* FOOTER */
+    .footer { border-top: 1px solid rgba(245,240,232,0.07); padding: 3.5rem 4rem; }
+    .footer-inner { max-width: 1300px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .footer-brand { font-family: var(--fh); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 1.75rem; list-style: none; }
+    .footer-links a { font-size: 0.58rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,240,232,0.3); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--cream); }
+    .footer-copy { font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,240,232,0.18); white-space: nowrap; }
+
+    @media (max-width: 900px) {
+      .collection-grid { grid-template-columns: repeat(2, 1fr); }
+      .page-header { padding: 7rem 2rem 3rem; }
+      .collection { padding: 2rem; }
+      .cta-strip { padding: 5rem 2rem; }
+    }
+    @media (max-width: 580px) {
+      .nav { padding: 1.25rem 1.5rem; }
+      .nav-links { display: none; }
+      .nav-build { display: none; }
+      .nav-ham { display: flex; }
+      .collection-grid { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; text-align: center; gap: 1.5rem; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/" class="nav-logo">Raw Hair Direct</a>
+    <ul class="nav-links">
+      <li><a href="/products">Collection</a></li>
+      <li><a href="/content/about">Our Story</a></li>
+      <li><a href="/content/guides/how-many-bundles-do-i-need">Guides</a></li>
+      <li><a href="/custom-builder" class="nav-build">Build Set</a></li>
+    </ul>
+    <div class="nav-ham" id="ham" role="button" tabindex="0" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-menu-close" id="mobile-close" aria-label="Close menu">✕</button>
+    <a href="/products" onclick="document.getElementById('mobile-menu').classList.remove('open')">Collection</a>
+    <a href="/content/about" onclick="document.getElementById('mobile-menu').classList.remove('open')">Our Story</a>
+    <a href="/content/guides/how-many-bundles-do-i-need" onclick="document.getElementById('mobile-menu').classList.remove('open')">Guides</a>
+    <a href="/custom-builder" style="color: var(--gold);" onclick="document.getElementById('mobile-menu').classList.remove('open')">Build Your Set</a>
+  </div>
+
+  <header class="page-header">
+    <p class="page-label">The Collection</p>
+    <h1 class="page-h1">Raw Hair.<br /><em>Direct.</em></h1>
+  </header>
+
+  <section class="collection">
+    <div class="collection-grid">
+      {products.map(p => (
+        <a href={p.slug} class="product-card">
+          <img src={p.img} alt={p.alt} loading="lazy" />
+          <div class="card-info">
+            <p class="card-label">{p.label}</p>
+            <p class="card-sub">{p.sub}</p>
+            {p.from
+              ? <p class="card-from">From ${p.from}</p>
+              : <p class="card-from">Custom Pricing</p>
+            }
+            <span class="card-cta">Shop Now →</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="cta-strip">
+    <h2>Not sure<br /><em>where to start?</em></h2>
+    <a href="/custom-builder" class="cta-btn">
+      Build Your Custom Set →
+    </a>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-brand">Raw Hair Direct</p>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/products">Collection</a></li>
+        <li><a href="/content/about">About</a></li>
+        <li><a href="/custom-builder">Build a Set</a></li>
+        <li><a href="/policies/shipping">Shipping</a></li>
+        <li><a href="/policies/returns">Returns</a></li>
+        <li><a href="https://wa.me/233500601915" target="_blank" rel="noopener">WhatsApp</a></li>
+      </ul>
+      <p class="footer-copy">© {new Date().getFullYear()} Raw Hair Direct</p>
+    </div>
+  </footer>
+
+  <script>
+    const ham = document.getElementById('ham');
+    const menu = document.getElementById('mobile-menu');
+    const close = document.getElementById('mobile-close');
+    ham?.addEventListener('click', () => menu?.classList.add('open'));
+    close?.addEventListener('click', () => menu?.classList.remove('open'));
+    ham?.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') menu?.classList.toggle('open'); });
+  </script>
+
+</body>
+</html>

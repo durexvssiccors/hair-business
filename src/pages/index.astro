@@ -362,6 +362,18 @@ import Analytics from '../components/Analytics.astro';
       .footer-inner { flex-direction: column; text-align: center; gap: 1.5rem; }
       .footer-links { justify-content: center; }
     }
+    /* MOBILE MENU */
+    .mobile-menu {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 190;
+      background: var(--ink);
+      flex-direction: column; align-items: center; justify-content: center;
+      gap: 2.5rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: 1.4rem; font-family: var(--fh); font-weight: 700; }
+    .mobile-menu-close { position: absolute; top: 1.5rem; right: 1.75rem; cursor: pointer; font-size: 1.5rem; color: var(--muted); background: none; border: none; color: var(--muted); }
+
     @media (max-width: 540px) {
       .nav { padding: 1.25rem 1.5rem; }
       .nav-links { display: none; }
@@ -383,13 +395,22 @@ import Analytics from '../components/Analytics.astro';
     <ul class="nav-links">
       <li><a href="/products">Collection</a></li>
       <li><a href="/content/about">Our Story</a></li>
-      <li><a href="/content/guides">Guides</a></li>
+      <li><a href="/content/guides/how-many-bundles-do-i-need">Guides</a></li>
       <li><a href="/custom-builder" class="nav-build">Build Set</a></li>
     </ul>
     <div class="nav-ham" id="ham" role="button" tabindex="0" aria-label="Menu">
       <span></span><span></span><span></span>
     </div>
   </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-menu-close" id="mobile-close" aria-label="Close menu">✕</button>
+    <a href="/products">Collection</a>
+    <a href="/content/about">Our Story</a>
+    <a href="/content/guides/how-many-bundles-do-i-need">Guides</a>
+    <a href="/custom-builder" style="color: var(--gold);">Build Your Set</a>
+  </div>
 
   <!-- ① HERO -->
   <section class="hero">
@@ -511,6 +532,15 @@ import Analytics from '../components/Analytics.astro';
     window.addEventListener('scroll', () => {
       nav?.classList.toggle('solid', window.scrollY > 80);
     }, { passive: true });
+
+    // Mobile menu
+    const ham = document.getElementById('ham');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileClose = document.getElementById('mobile-close');
+    ham?.addEventListener('click', () => mobileMenu?.classList.add('open'));
+    mobileClose?.addEventListener('click', () => mobileMenu?.classList.remove('open'));
+    ham?.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') mobileMenu?.classList.toggle('open'); });
+    mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
 
     // Scroll reveal
     const items = document.querySelectorAll('.r');
