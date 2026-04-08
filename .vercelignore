@@ -1,5 +1,5 @@
-# Raw source assets — never deploy
-assets/
+# Raw source assets — never deploy (root /assets/ only, not public/assets/)
+/assets/
 
 # Videos in public — too large for Vercel static, use Cloudinary/S3 later
 public/assets/processed/*.mp4

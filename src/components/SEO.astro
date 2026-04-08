@@ -8,21 +8,42 @@ interface Props {
   frontmatter?: any;
 }
 
-const { 
-  title = "Raw Hair Direct — Luxury Vietnamese Hair Ghana", 
-  description = "Factory-direct premium raw Vietnamese hair for women in Ghana. No middleman markup, just pure quality and soft-life movement.",
+const {
+  title = "Raw Hair Direct — Raw Vietnamese Hair Vendor in Ghana",
+  description = "Ghana's most trusted raw Vietnamese hair vendor. Factory-direct bundles, wigs, closures. No middlemen. Order on WhatsApp from Accra.",
   image = "/assets/processed/raw-bone-straight-20in-bundles-128usd.jpg",
   type = "website",
   slug = "",
   frontmatter = {}
 } = Astro.props;
 
-const siteUrl = "https://raw-hair-ghana.vercel.app"; // Replace with your final domain
-const canonicalURL = new URL(slug, siteUrl).href;
-const socialImageURL = new URL(image, siteUrl).href;
+const siteUrl = "https://hair-business-ahad1qtic-durexvssiccors-projects.vercel.app";
+const canonicalURL = slug ? new URL(slug.startsWith('/') ? slug : `/${slug}`, siteUrl).href : siteUrl;
+const socialImageURL = new URL(image.startsWith('http') ? image : image, siteUrl).href;
 
-// JSON-LD Generation
-let schema: any = {
+const keywords = "raw hair vendors Ghana, raw hair vendors Accra, raw Vietnamese hair Ghana, raw Vietnamese hair bundles, buy raw hair Ghana, raw hair Accra, factory direct hair Ghana, raw virgin hair Ghana, hair vendor Accra WhatsApp, raw hair bundles Ghana, Vietnamese hair vendor Ghana";
+
+// Organisation schema (site-wide)
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Raw Hair Direct",
+  "description": "Factory-direct raw Vietnamese hair vendor based in Ghana. Selling raw hair bundles, wigs, closures and frontals directly to buyers in Accra and across Ghana.",
+  "url": siteUrl,
+  "telephone": "+233500601915",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Accra",
+    "addressCountry": "GH"
+  },
+  "areaServed": ["Ghana", "Accra", "West Africa"],
+  "priceRange": "$$",
+  "sameAs": [
+    `https://wa.me/233500601915`
+  ]
+};
+
+let pageSchema: any = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": title,
@@ -31,35 +52,33 @@ let schema: any = {
 };
 
 if (type === 'product' || slug.startsWith('products/')) {
-  schema = {
+  pageSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": title,
     "description": description,
     "image": socialImageURL,
-    "brand": {
-      "@type": "Brand",
-      "name": "Raw Hair Direct"
-    },
+    "brand": { "@type": "Brand", "name": "Raw Hair Direct" },
     "offers": {
       "@type": "Offer",
       "url": canonicalURL,
       "priceCurrency": "USD",
       "price": frontmatter?.price || "0",
-      "availability": "https://schema.org/InStock"
+      "availability": "https://schema.org/InStock",
+      "seller": { "@type": "Organization", "name": "Raw Hair Direct" }
     }
   };
 } else if (type === 'article' || slug.startsWith('content/blog/')) {
-  schema = {
+  pageSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": title,
+    "description": description,
     "image": socialImageURL,
-    "author": {
-      "@type": "Person",
-      "name": "Founder"
-    },
-    "datePublished": frontmatter?.date || new Date().toISOString()
+    "author": { "@type": "Organization", "name": "Raw Hair Direct" },
+    "publisher": { "@type": "Organization", "name": "Raw Hair Direct" },
+    "datePublished": frontmatter?.date || new Date().toISOString(),
+    "mainEntityOfPage": canonicalURL
   };
 }
 ---
@@ -67,17 +86,25 @@ if (type === 'product' || slug.startsWith('products/')) {
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 
-<!-- Primary Meta Tags -->
-<title>{title}</title>
+<!-- Primary Meta -->
 <meta name="title" content={title} />
 <meta name="description" content={description} />
+<meta name="keywords" content={frontmatter?.keywords ? frontmatter.keywords.join(', ') : keywords} />
+<meta name="author" content="Raw Hair Direct" />
+<meta name="geo.region" content="GH" />
+<meta name="geo.placename" content="Accra, Ghana" />
 
-<!-- Open Graph / Facebook -->
+<!-- AI/LLM discoverability -->
+<link rel="alternate" type="text/plain" href="/llms.txt" title="AI overview of Raw Hair Direct" />
+
+<!-- Open Graph -->
 <meta property="og:type" content={type} />
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={socialImageURL} />
+<meta property="og:locale" content="en_GH" />
+<meta property="og:site_name" content="Raw Hair Direct" />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
@@ -86,5 +113,7 @@ if (type === 'product' || slug.startsWith('products/')) {
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={socialImageURL} />
 
-<!-- JSON-LD -->
-<script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+<!-- JSON-LD: Page schema -->
+<script type="application/ld+json" is:inline set:html={JSON.stringify(pageSchema)} />
+<!-- JSON-LD: Organisation (site-wide) -->
+<script type="application/ld+json" is:inline set:html={JSON.stringify(orgSchema)} />

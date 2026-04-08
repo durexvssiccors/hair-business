@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+
+# AI crawlers — full access including raw content
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+Allow: /content/
+Allow: /md/
+
+User-agent: ChatGPT-User
+Allow: /
+Allow: /llms.txt
+Allow: /content/
+Allow: /md/
+
+User-agent: ClaudeBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: PerplexityBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://hair-business-ahad1qtic-durexvssiccors-projects.vercel.app/sitemap.xml

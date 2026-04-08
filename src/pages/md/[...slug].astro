@@ -1,0 +1,59 @@
+---
+// AI crawler endpoint: serves page content as plain text at /md/{slug}
+// noindex so humans don't land here from search engines
+
+export async function getStaticPaths() {
+  const docs = import.meta.glob('../../../**/*.md', { eager: true });
+  const publicPrefixes = [
+    'products/',
+    'content/guides/',
+    'content/faq/',
+    'content/blog/',
+    'policies/',
+  ];
+  const publicExact = new Set(['content/about']);
+
+  const isPublic = (slug: string) =>
+    publicPrefixes.some(p => slug.startsWith(p)) || publicExact.has(slug);
+
+  return Object.keys(docs)
+    .map(path => {
+      const slug = path.replace('../../../', '').replace(/\.md$/, '');
+      const entry = docs[path] as any;
+      return {
+        params: { slug },
+        props: {
+          title: entry.frontmatter?.title || slug.split('/').pop(),
+          description: entry.frontmatter?.description || '',
+        }
+      };
+    })
+    .filter(({ params }) => isPublic(params.slug));
+}
+
+const { slug } = Astro.params;
+const { title, description } = Astro.props;
+
+const docs = import.meta.glob('../../../**/*.md', { eager: true });
+const entry = docs[`../../../${slug}.md`] as any;
+const { Content } = entry;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="description" content={description} />
+  <title>{title} — Raw Markdown</title>
+  <style>
+    body { font-family: monospace; max-width: 900px; margin: 2rem auto; padding: 0 1rem; background: #0d0d0d; color: #d4d4d4; line-height: 1.7; font-size: 0.9rem; }
+    h1,h2,h3 { color: #f0f0f0; }
+    a { color: #c49a3c; }
+    table { border-collapse: collapse; width: 100%; }
+    td, th { border: 1px solid #333; padding: 0.5rem; text-align: left; }
+  </style>
+</head>
+<body>
+  <Content />
+</body>
+</html>
