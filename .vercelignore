@@ -1,0 +1,18 @@
+# Raw source assets — never deploy
+assets/
+
+# Videos in public — too large for Vercel static, use Cloudinary/S3 later
+public/assets/processed/*.mp4
+public/assets/processed/*.mov
+public/assets/processed/*.MOV
+
+# Dev/tooling
+node_modules/
+.tools/
+.astro/
+.claude/
+rclone
+
+# Unprocessed content
+assets/raw/
+catalog/asset-catalog.csv
