@@ -1,6 +1,6 @@
 ---
 import SEO from '../components/SEO.astro';
-const { title, description, image, frontmatter } = Astro.props;
+const { title, description, image, type, slug, frontmatter } = Astro.props;
 const isProductPage = Astro.url.pathname.startsWith('/products');
 const WA_NUMBER = '233500601915';
 const waMessage = `Hi! I'm interested in ${title || 'your hair products'}. Can you help me with pricing and availability?`;
@@ -58,8 +58,8 @@ const sections = [...new Set(navItems.map(item => item.section))].sort((a, b) =>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <SEO {title} {description} {image} {frontmatter} slug={Astro.url.pathname} />
-    <title>{title || "Raw Hair Direct — Docs"}</title>
+    <SEO {title} {description} {image} {type} {frontmatter} slug={slug || Astro.url.pathname} />
+    <title>{title ? `${title} | Raw Hair Direct` : "Raw Hair Direct"}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />

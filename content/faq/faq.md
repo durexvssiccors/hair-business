@@ -1,131 +1,144 @@
 ---
-title: "FAQ"
+title: "Frequently Asked Questions — Raw Hair Direct Ghana"
+description: "Everything you need to know about buying raw Vietnamese hair in Ghana. Bundle counts, closures vs frontals, ordering via WhatsApp, and more."
+keywords: ["raw hair FAQ Ghana", "raw Vietnamese hair questions", "buy hair Ghana FAQ", "how to order raw hair Ghana", "raw hair Ghana WhatsApp", "raw hair care Ghana"]
 ---
 
-# FAQ
+# Frequently Asked Questions
 
-## Frequently Asked Questions
+Everything you need to know about buying raw Vietnamese hair in Ghana.
+
+---
+
+## About the Hair
 
 ### Is this raw Vietnamese hair?
-Yes. Our focus is premium raw Vietnamese hair selected for softness, movement, fullness, and long-term value.
+Yes. We sell 100% raw Vietnamese hair — unprocessed, sourced directly from a factory in Vietnam. No acid baths, no silicone coating, no steam processing.
+
+Read more: [Why Raw Vietnamese Hair Is Worth the Investment →](/content/blog/why-raw-vietnamese-hair-is-the-only-choice-2026)
 
 ---
 
-### What products do you sell?
-We sell:
-- bundles
-- closures
-- frontals
-- wigs
-- custom-built packages
+### What makes raw hair different from Remy or Virgin hair?
 
----
+| Type | What it means |
+|------|--------------|
+| Raw | Unprocessed from a single donor — no chemicals, no treatments |
+| Virgin | Uncoloured, but may be steam-processed to create wave patterns |
+| Remy | Cuticle-aligned, but almost always chemically treated before export |
 
-### How many bundles do I need?
-For most full installs, 3 bundles works well.
-
-If you want extra fullness or are choosing longer lengths, you may need more. If you are unsure, message us and we’ll guide you properly.
-
----
-
-### What is the difference between a closure and a frontal?
-A closure gives you a clean, natural finish with less maintenance.
-
-A frontal gives you more styling flexibility and a more dramatic finished look.
-
-If you are not sure which one fits your style, we can recommend the better option.
-
----
-
-### Do you sell wigs too?
-Yes. We offer wigs as part of our premium collection, along with bundles, closures, frontals, and custom options.
-
----
-
-### Can I build my own package?
-Yes. Our Custom Build option allows you to choose exactly what you want, including bundles, closures, frontals, wigs, mixed lengths, and multiple quantities.
-
----
-
-### Can I order just one item?
-Yes. You can order one item or build a larger package depending on what you need.
-
----
-
-### Can I mix lengths?
-Yes. Mixed lengths can be part of a custom order or selected package depending on availability.
-
----
-
-### Can I order multiple items at once?
-Yes. You can order as many items as you need, including mixed quantities and custom combinations.
-
----
-
-### Who is the Custom Build option for?
-It is perfect for:
-- shoppers who know exactly what they want
-- buyers who want mixed lengths
-- women building custom installs
-- stylists and beauty professionals
-- customers buying multiple items at once
-
----
-
-### How do I know what texture to choose?
-That depends on the look you want.
-
-If you want, message us and we’ll help you choose based on:
-- your preferred look
-- your ideal length
-- your occasion
-- whether you want bundles or a wig
-
----
-
-### Do you help customers choose?
-Yes. We guide customers on:
-- texture
-- length
-- quantity
-- bundles vs wigs
-- closure vs frontal
-- custom package options
-
----
-
-### How do I place an order?
-You can order by:
-- shopping the site
-- using the Custom Build flow
-- messaging us directly on WhatsApp for guidance
-
----
-
-### Do you offer support after purchase?
-Yes. We can guide you on care, maintenance, and future orders.
-
----
-
-### How should I care for the hair?
-Use gentle products, avoid unnecessary buildup, handle the hair carefully, and follow our care guide for the best long-term results.
+Raw hair behaves like natural hair because it essentially is. After washing, it settles into its real texture — not the artificial finish of silicone-coated hair.
 
 ---
 
 ### How long does the hair last?
-With proper care, premium raw hair can be reused and enjoyed over multiple wears or installs. Longevity depends on handling, styling habits, and maintenance.
+
+With proper care, raw Vietnamese hair lasts **3–5 years** across multiple installs. That's why it costs more upfront — but far less over time than replacing processed hair every 6–12 months.
 
 ---
 
-### Is this hair good for special occasions?
-Yes. Our bundles, wigs, and premium sets are great for birthdays, weddings, holidays, photoshoots, and other important moments.
+### Can the hair be coloured or bleached?
+
+Yes. Genuinely raw Vietnamese hair takes dye, bleach, and toner exactly like natural hair. We recommend professional application for bleaching. Avoid box dyes.
 
 ---
 
-### Can beauty professionals or stylists order too?
-Yes. Our Custom Build option is especially useful for stylists, beauty operators, and buyers who need multiple items or more flexibility.
+### What textures do you carry?
+
+We carry: **Bone Straight, Body Wave, Deep Wave,** and **Curly** in raw Vietnamese hair. Available as bundles, closures, frontals, 5x5 closure wigs, and 13x4 frontal wigs.
 
 ---
 
-### What if I am not sure what to buy?
-Message us directly and we’ll recommend the best fit based on the look you want.
+## Buying Guide
+
+### How many bundles do I need?
+
+For most full installs: **3 bundles** is the standard starting point.
+
+| Length | Bundles recommended |
+|--------|-------------------|
+| 12"–22" | 2–3 bundles |
+| 24" | 3 bundles |
+| 26"–28" | 4 bundles |
+| 30"+ | 4–5 bundles |
+
+Full guide: [How Many Bundles Do I Need? →](/content/guides/how-many-bundles-do-i-need)
+Detailed breakdown: [3 Bundles vs 4 Bundles — Ghana Guide →](/content/blog/3-bundles-vs-4-guide)
+
+---
+
+### What's the difference between a closure and a frontal?
+
+A **5x5 closure** covers the crown — cleaner finish, easier upkeep, great for everyday wear.
+
+A **13x4 frontal** covers the full hairline ear to ear — more styling freedom, more dramatic result.
+
+Full guide: [Closure vs Frontal — Which Is Right for You? →](/content/guides/closure-vs-frontal)
+
+---
+
+### Can I mix lengths in one order?
+
+Yes. Mixed lengths can be included in a custom order. Use the [Custom Package Builder →](/custom-builder) or message us directly to configure what you want.
+
+---
+
+### Can beauty professionals and stylists order?
+
+Yes. Our [Custom Build option →](/custom-builder) is especially useful for stylists who need multiple items, mixed textures, or flexible quantities. Message us on WhatsApp to discuss bulk pricing.
+
+---
+
+## Ordering
+
+### How do I place an order?
+
+1. Browse the [collection →](/products) or use the [Custom Package Builder →](/custom-builder)
+2. Configure your set — texture, lengths, bundle count
+3. Get a live price estimate
+4. Send your order via [WhatsApp: +233500601915](https://wa.me/233500601915?text=Hi!%20I%27d%20like%20to%20place%20an%20order.)
+5. We confirm availability, payment, and delivery details
+
+---
+
+### Do you deliver in Accra?
+
+Yes. We deliver locally in Accra. Delivery terms are confirmed at the time of order via WhatsApp.
+
+---
+
+### Can I order via WhatsApp only?
+
+Yes. All orders are processed through WhatsApp at **+233500601915**. We confirm availability, answer questions, and manage your entire order through chat — no abandoned cart, no ghost vendor experience.
+
+---
+
+### What is the price range?
+
+| Product | Starting price |
+|---------|--------------|
+| Bundles | $45 per bundle |
+| 5x5 Closure Wigs | $205 |
+| 13x4 Frontal Wigs | $277 |
+| Closures (5x5) | $35 |
+| Frontals (13x4) | $45 |
+
+---
+
+## Care & Maintenance
+
+### How should I care for the hair?
+
+Use sulphate-free shampoo and a good conditioner. Avoid excessive heat without heat protectant. Store properly between installs. Raw hair can be re-washed, re-styled, and re-installed multiple times with proper care.
+
+---
+
+### How do I know if my current hair is actually raw?
+
+Run a small section through your fingers when dry. Genuinely raw hair feels slightly natural and real — not silky-smooth. That artificial smoothness is silicone coating. After washing, truly raw hair settles into natural texture. Processed hair starts to feel dry and rough.
+
+---
+
+### Still have a question?
+
+[Chat with us on WhatsApp →](https://wa.me/233500601915?text=Hi!%20I%20have%20a%20question%20about%20your%20hair.)

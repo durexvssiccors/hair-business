@@ -12,7 +12,7 @@ const publicExactPaths = new Set([
     'content/about',
 ]);
 
-function isPublicSlug(slug) {
+function isPublicSlug(slug: string) {
     return publicPrefixes.some(prefix => slug.startsWith(prefix)) || publicExactPaths.has(slug);
 }
 
@@ -21,19 +21,18 @@ export async function getStaticPaths() {
         'products/',
         'content/guides/',
         'content/faq/',
+        'content/blog/',
         'policies/',
     ];
     const publicExactPaths = new Set([
         'content/about',
     ]);
-    const isPublicSlug = (slug) =>
+    const isPublicSlug = (slug: string) =>
         publicPrefixes.some(prefix => slug.startsWith(prefix)) || publicExactPaths.has(slug);
 
-    const docs = import.meta.glob('../../*.md');
     const nestedDocs = import.meta.glob('../../**/*.md');
-    const allPaths = { ...docs, ...nestedDocs };
 
-    return Object.keys(allPaths)
+    return Object.keys(nestedDocs)
         .map(path => {
             const slug = path.replace('../../', '').replace('.md', '');
             return { params: { slug } };
@@ -47,15 +46,29 @@ if (!isPublicSlug(slug)) {
     return Astro.redirect('/');
 }
 const path = `../../${slug}.md`;
-const entry = docs[path];
+const entry = docs[path] as any;
 
 if (!entry) {
     return Astro.redirect('/404');
 }
 
 const { Content, frontmatter } = entry;
+
+// Determine page type for SEO
+function getPageType(slug: string): 'website' | 'article' | 'product' {
+    if (slug.startsWith('products/')) return 'product';
+    if (slug.startsWith('content/blog/')) return 'article';
+    return 'website';
+}
 ---
 
-<DocsLayout title={frontmatter?.title || slug.split('/').pop()}>
+<DocsLayout
+    title={frontmatter?.title}
+    description={frontmatter?.description}
+    image={frontmatter?.hero_image}
+    type={getPageType(slug)}
+    slug={slug}
+    frontmatter={frontmatter}
+>
     <Content />
 </DocsLayout>

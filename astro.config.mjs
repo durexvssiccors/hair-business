@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 export default defineConfig({
-  site: 'https://hair-business-ahad1qtic-durexvssiccors-projects.vercel.app',
+  site: process.env.PUBLIC_SITE_URL || 'https://rawhairdirect.com',
   output: 'static',
   integrations: [
     mdx(),

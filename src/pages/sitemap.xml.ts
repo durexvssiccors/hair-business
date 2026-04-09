@@ -3,11 +3,11 @@
 
 import type { APIRoute } from 'astro';
 
-const SITE = 'https://hair-business-ahad1qtic-durexvssiccors-projects.vercel.app';
+const SITE = (import.meta.env.SITE || 'https://rawhairdirect.com').replace(/\/$/, '');
 
 const STATIC_ROUTES = [
-  { url: '/', priority: '1.0', changefreq: 'weekly' },
-  { url: '/products', priority: '0.9', changefreq: 'weekly' },
+  { url: '/',               priority: '1.0', changefreq: 'weekly'  },
+  { url: '/products',       priority: '0.9', changefreq: 'weekly'  },
   { url: '/custom-builder', priority: '0.9', changefreq: 'monthly' },
 ];
 
@@ -25,16 +25,18 @@ function isPublic(slug: string) {
 }
 
 function priority(slug: string): string {
-  if (slug.startsWith('products/bundles') || slug.startsWith('products/wigs')) return '0.85';
-  if (slug.startsWith('products/')) return '0.8';
-  if (slug.startsWith('content/blog/')) return '0.75';
-  if (slug.startsWith('content/guides/')) return '0.7';
-  return '0.5';
+  if (slug.startsWith('products/bundles') || slug.startsWith('products/wigs')) return '0.88';
+  if (slug.startsWith('products/'))       return '0.82';
+  if (slug.startsWith('content/blog/'))   return '0.78';
+  if (slug.startsWith('content/guides/')) return '0.72';
+  if (slug === 'content/about')           return '0.65';
+  if (slug.startsWith('content/faq/'))    return '0.60';
+  return '0.50';
 }
 
 function changefreq(slug: string): string {
+  if (slug.startsWith('products/'))     return 'weekly';
   if (slug.startsWith('content/blog/')) return 'monthly';
-  if (slug.startsWith('products/')) return 'weekly';
   return 'monthly';
 }
 
@@ -45,10 +47,10 @@ export const GET: APIRoute = async () => {
     .map(path => path.replace('../', '').replace(/\.md$/, ''))
     .filter(isPublic)
     .map(slug => ({
-      url: `/${slug}`,
-      priority: priority(slug),
+      url:        `/${slug}`,
+      priority:   priority(slug),
       changefreq: changefreq(slug),
-      lastmod: new Date().toISOString().split('T')[0],
+      lastmod:    new Date().toISOString().split('T')[0],
     }));
 
   const allUrls = [

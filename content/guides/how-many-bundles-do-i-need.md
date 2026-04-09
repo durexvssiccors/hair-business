@@ -1,125 +1,93 @@
 ---
-title: "How Many Bundles Do I Need?"
+title: "How Many Bundles Do I Need? Complete Guide"
+description: "Find out exactly how many raw Vietnamese hair bundles you need for your install — based on length, texture, and fullness. Includes closure and frontal guidance."
+keywords: ["how many bundles do I need", "how many bundles Ghana", "bundle count guide", "raw hair bundle count", "bundles for sew-in Ghana", "Vietnamese hair bundles Accra", "3 bundles vs 4 bundles"]
 ---
 
 # How Many Bundles Do I Need?
 
-## A Simple Guide
+The most common question we get — and it matters. Get the count wrong and your install either looks thin or feels unnecessarily heavy.
 
-One of the most common questions we get is:
-**How many bundles do I actually need?**
-
-The answer depends on:
-- the look you want
-- the length you want
-- how full you want the final result to be
-- whether you are adding a closure or frontal
+The answer depends on three things: **your length, your desired fullness, and whether you're adding a closure or frontal.**
 
 ---
 
-## The Short Version
+## Bundle Count by Length: Quick Reference
 
-For most full installs:
-**3 bundles works really well**
+| Hair Length | Recommended Bundles | Notes |
+|-------------|--------------------|-|
+| 12" – 16" | 2–3 bundles | 2 works fine; 3 adds density |
+| 18" – 22" | 3 bundles | Standard for full everyday installs |
+| 24" | 3 bundles | The gold standard for most customers |
+| 26" – 28" | 4 bundles | Needed for fullness at longer lengths |
+| 30"+ | 4–5 bundles | Maximum volume for dramatic looks |
 
-That is the easiest starting point for many customers.
-
----
-
-## If You Want a More Natural Look
-
-If you want something lighter or more natural-looking, you may need fewer bundles depending on:
-- the lengths you choose
-- your install style
-- how full you want it to feel
+*Note: Always add a [closure or frontal](/content/guides/closure-vs-frontal) for a cleaner finish. It contributes its own density at the top.*
 
 ---
 
-## If You Want More Fullness
+## Why Length Changes Everything
 
-If you want a fuller finish, you may need more bundles.
+Bundles are sold by weight — typically 100g each. A 28-inch bundle has a shorter weft track than a 14-inch bundle at the same 100g weight, because longer strands weigh more per centimetre. That means less coverage per bundle as the length increases.
 
-This becomes more relevant when:
-- you like dramatic volume
-- you want a richer finish
-- you are choosing longer lengths
-- you want a more glamorous result
+At longer lengths, you need more bundles to fill the same head space and maintain fullness at the ends.
 
 ---
 
-## If You Are Choosing Longer Lengths
+## 3 Bundles vs 4 Bundles: Which Is Right for You?
 
-Longer lengths often need more fullness to achieve the final look many customers want.
+This is the most common decision point. Here's how to think about it:
 
-That means you may want to consider:
-- adding another bundle
-- using a fuller package
-- choosing a closure or frontal for a cleaner finish
+### Choose 3 Bundles if:
+- Your chosen length is 24 inches or under
+- You are adding a closure or frontal (it adds density at the top)
+- You want a natural, full everyday finish
+- You prefer a lighter feel on the head
 
----
+### Choose 4 Bundles if:
+- Your chosen length is 26 inches or longer
+- You want maximum volume and dramatic fullness
+- You are doing a leave-out install without any lace piece
+- You want an extra-full result at any length
 
-## What About Closures and Frontals?
-
-A closure or frontal can affect how much hair you need depending on the final style you want.
-
-### Closure
-A good option if you want:
-- a cleaner finish
-- a natural look
-- less maintenance
-
-### Frontal
-A good option if you want:
-- more styling flexibility
-- a more dramatic finished result
+Read the full breakdown: [3 Bundles vs 4 Bundles — Ghana Guide →](/content/blog/3-bundles-vs-4-guide)
 
 ---
 
-## General Rule of Thumb
+## Does a Closure or Frontal Change the Bundle Count?
 
-### For most customers
-- 3 bundles is a strong starting point
+Yes — a closure or frontal covers the crown or full hairline, which contributes its own density to the install. This means:
 
-### For lighter installs
-- fewer may work depending on the style
+- **With a 5x5 closure:** 3 bundles is typically enough for a full install at 24 inches or under
+- **With a 13x4 frontal:** Same — 3 bundles covers most installs; go to 4 for 26 inches and above
+- **Without any lace piece (leave-out):** You may need 1 extra bundle for fullness at the top
 
-### For fuller or longer looks
-- more may be better
-
----
-
-## Best Advice
-
-If you are unsure, do not guess.
-
-Message us and we will recommend the right quantity based on:
-- your texture
-- your preferred length
-- your desired fullness
-- whether you want bundles only or a more complete package
+Learn the full closure vs frontal difference: [Closure vs Frontal — Which to Choose →](/content/guides/closure-vs-frontal)
 
 ---
 
-## Need Help Choosing?
+## The Raw Hair Difference on Bundle Count
 
-We can help you figure out:
-- how many bundles make sense
-- whether you need a closure or frontal
-- whether a wig is a better fit
-- whether a custom package makes more sense
+Most processed "virgin" hair has thin, tapered ends — which forces you to buy 4–5 bundles just to get a decent finish at 22 inches.
 
-## 📽️ Storyboard: The Bundle Guide
-### 🎞️ Intent & Vibe
-Clarify the relationship between bundle count and the final look. Position 3 bundles as the high-end luxury standard while acknowledging the need for more in certain styles.
+Because our Vietnamese hair is **genuinely raw**, the density runs root to tip. A 3-bundle raw set from us often looks fuller than a 4-bundle processed set from a standard vendor.
 
-### 📸 Visual Production Prompt (Hero Image)
-**Subject:** A high-end lifestyle shot of a beautiful West African model with glowing skin, showing different bundle counts side-by-side. 
-**Product:** She wears 2 bundles of 24-inch Bone Straight on one side, and 4 bundles on the other side, demonstrating the increase in density and fullness. 
-**Environment:** Luxury dressing room with high-end lighting and high-end fixtures.
-**Lighting:** Soft, even lighting to showcase the hair's movement and sheen.
-**Camera:** 8k resolution, portrait lens with shallow depth of field.
-**Aesthetic:** Informative, high-end editorial, and practical.
+**Practical example:** Our 24-inch bone straight 3-bundle set delivers the same visual fullness as most vendors' 4-bundle processed sets. That's the raw difference.
 
-[Chat on WhatsApp]  
-[Build Your Package]  
-[Shop Bundles]
+---
+
+## Still Unsure?
+
+If you're not certain what count works for your look, don't guess. Message us and we'll recommend the right quantity based on your texture, length, and desired fullness.
+
+[Chat on WhatsApp →](https://wa.me/233500601915?text=Hi!%20I%20need%20help%20choosing%20how%20many%20bundles%20I%20need.)
+
+Or use the [Custom Package Builder →](/custom-builder) to configure your set and get a live price before ordering.
+
+---
+
+**Related reads:**
+- [3 Bundles vs 4 Bundles — Ghana Guide](/content/blog/3-bundles-vs-4-guide)
+- [Closure vs Frontal — Which Is Right for You?](/content/guides/closure-vs-frontal)
+- [Raw Hair Vendors in Ghana — The Honest Breakdown](/content/blog/raw-hair-vendors-ghana-accra)
+- [Shop All Bundle Sets](/products)
