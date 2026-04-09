@@ -26,3 +26,4 @@ User-agent: Googlebot
 Allow: /
 
 Sitemap: https://hair-business-ahad1qtic-durexvssiccors-projects.vercel.app/sitemap.xml
+LLMs: https://hair-business-ahad1qtic-durexvssiccors-projects.vercel.app/llms.txt
